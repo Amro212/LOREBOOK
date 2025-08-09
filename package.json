@@ -1,0 +1,32 @@
+{
+  "name": "lorebook",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env WATCHPACK_POLLING=true NEXT_TELEMETRY_DISABLED=1 next dev -p 3000",
+    "dev:clean": "rimraf .next .next-dev && cross-env WATCHPACK_POLLING=true NEXT_TELEMETRY_DISABLED=1 next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.54.0",
+    "next": "15.4.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "zustand": "^5.0.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cross-env": "^10.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
