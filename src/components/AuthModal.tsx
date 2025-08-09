@@ -32,13 +32,13 @@ export default function AuthModal({ open, onClose }: AuthModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 grid place-items-center bg-black/40 backdrop-blur-sm"
+      className="fixed inset-0 z-50 grid place-items-center bg-black/60 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
     >
       <div
         ref={dialogRef}
-        className="w-full max-w-sm rounded-2xl border border-white/15 bg-white/90 dark:bg-black/80 p-5 shadow-xl dark:shadow-emerald-500/10"
+        className="w-full max-w-sm rounded-2xl border border-[color:var(--accent-border)] bg-[color:var(--panel)] p-5 shadow-[0_0_60px_rgba(232,181,126,0.12)]"
       >
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold tracking-[-0.01em]">{mode === "signup" ? "Create account" : "Sign in"}</h2>
@@ -53,7 +53,7 @@ export default function AuthModal({ open, onClose }: AuthModalProps) {
 
         <div className="space-y-3">
           <label className="block text-sm">
-            <span className="mb-1 block opacity-80">Username</span>
+            <span className="mb-1 block opacity-80">A name for the ledger</span>
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -63,7 +63,7 @@ export default function AuthModal({ open, onClose }: AuthModalProps) {
             />
           </label>
           <label className="block text-sm">
-            <span className="mb-1 block opacity-80">Password</span>
+            <span className="mb-1 block opacity-80">A private sigil</span>
             <input
               type="password"
               value={password}

@@ -7,6 +7,8 @@ import { useUserStore } from "@/store/useUserStore";
 import { Cormorant } from "next/font/google";
 import SentencePreview from "@/components/SentencePreview";
 import SentenceInput from "@/components/SentenceInput";
+import ChapterProgress from "@/components/ChapterProgress";
+import ChapterArchive from "@/components/ChapterArchive";
 
 const storySerif = Cormorant({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -67,28 +69,21 @@ export default function Home() {
               )}
             </div>
           </div>
-          <div className="h-40 md:h-56 rounded-xl border border-white/10 bg-white/5" />
+          <div>
+            <ChapterProgress chapterRoman="IV" progress={32} />
+          </div>
         </section>
 
         {/* Sentence Preview placeholder */}
         <section>
-          <h2 className="text-xl font-semibold mb-4">Latest Sentences</h2>
+          <h2 className="text-xl font-semibold mb-4">Fresh Ink</h2>
           <SentencePreview />
         </section>
 
         {/* Chapter Archive placeholder */}
         <section>
           <h2 className="text-xl font-semibold mb-4">Chapter Archive</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-32 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center opacity-80"
-              >
-                Chapter {i + 1} (placeholder)
-              </div>
-            ))}
-          </div>
+          <ChapterArchive />
         </section>
 
         {/* Sentence Input */}
